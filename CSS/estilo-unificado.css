@@ -1,0 +1,279 @@
+/* ==================== RESET GENERAL ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(93, 91, 100, 0.774);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ==================== NAVEGADOR ==================== */
+.navegador {
+  background-color: rgba(29, 23, 53, 0.774);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.abuelita {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid orange;
+}
+
+.contenedor-enlaces {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.inicio, .menu, .contacto {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 10px;
+}
+
+/* ==================== COMIDAS DESTACADAS ==================== */
+.articulo1 {
+  position: relative;
+  height: 650px;
+  overflow: hidden;
+  border-top: 3px solid orange;
+  border-bottom: 3px solid black;
+}
+
+.fondo-mesa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.contenedor-comidas {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 100%;
+  padding: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.piza, .hamburguesa, .empanadas, .milanesa, .sanguche-milanesa {
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 3px solid orange;
+  object-fit: cover;
+  display: block;
+  margin: 10px auto;
+}
+
+/* ==================== FOTOS DEL LOCAL ==================== */
+.seccion2 {
+  background-color: rgba(76, 82, 82, 0.842);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px;
+}
+
+.local {
+  width: 48%;
+  height: 500px;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+/* ==================== MAPA ==================== */
+.mapa {
+  background-color: rgba(76, 82, 82, 0.842);
+  padding: 20px;
+  text-align: center;
+}
+
+.mapa2 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.maps {
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+  border: none;
+}
+
+/* ==================== PIE DE PÁGINA ==================== */
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 40px 20px 10px;
+}
+
+.redes a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+
+/* ==================== WHATSAPP ICON ==================== */
+.contenedor-wsp {
+  background-color: rgb(4, 56, 4);
+  position: fixed;
+  z-index: 999;
+  border-radius: 50%;
+  bottom: 20px;
+  right: 25px;
+  padding: 20px;
+  animation: efecto 1.2s infinite;
+  transition: transform 0.3s;
+}
+
+.contenedor-wsp:hover {
+  transform: scale(1.1);
+}
+
+.icono-wsp {
+  width: 40px;
+}
+
+@keyframes efecto {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85);
+  }
+  100% {
+    box-shadow: 0 0 0 25px rgba(0, 0, 0, 0);
+  }
+}
+
+/* ==================== MENÚ DESPLEGABLE (SECCIÓN OPCIONAL) ==================== */
+.main {
+  background-color: rgba(93, 91, 100, 0.774);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-top: 2px solid orange;
+  border-bottom: 2px solid orange;
+}
+
+.contenedor {
+  width: 800px;
+  background-color: rgba(29, 23, 53, 0.774);
+  box-shadow: 7px 13px 37px rgba(0, 0, 0, .5);
+}
+
+section a {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: orange;
+  color: black;
+  border-bottom: 2px solid gray;
+}
+
+h3 {
+  overflow: hidden;
+  max-height: 0;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: medium;
+  background-color: beige;
+  transition: max-height 0.5s ease;
+}
+
+section:target h3 {
+  max-height: 1000px;
+  padding: 8px;
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+
+/* CELULARES */
+@media screen and (max-width: 480px) {
+  .navegador {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contenedor-comidas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .piza, .hamburguesa, .empanadas, .milanesa, .sanguche-milanesa {
+    width: 70%;
+    height: auto;
+  }
+
+  .local {
+    width: 100%;
+    height: auto;
+  }
+
+  .maps {
+    height: 300px;
+  }
+
+  .contenedor {
+    width: 90%;
+  }
+}
+
+/* TABLETS */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .contenedor-comidas {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .piza, .hamburguesa, .empanadas, .milanesa, .sanguche-milanesa {
+    width: 30%;
+  }
+
+  .local {
+    width: 100%;
+    height: auto;
+  }
+
+  .maps {
+    height: 350px;
+  }
+
+  .contenedor {
+    width: 95%;
+  }
+}
+
+/* DESKTOPS GRANDES */
+@media screen and (min-width: 1025px) {
+  .contenedor-comidas {
+    justify-content: space-evenly;
+  }
+
+  .piza, .hamburguesa, .empanadas, .milanesa, .sanguche-milanesa {
+    width: 120px;
+    height: 120px;
+  }
+}
